@@ -23,9 +23,9 @@ DEVICE="$1"
 EXTRAS="$2"
 
 # get current version
-MAJOR=$(cat $DIR/vendor/pac/config/pac_common.mk | grep 'PAC_VERSION_MAJOR = *' | sed  's/PAC_VERSION_MAJOR = //g')
-MINOR=$(cat $DIR/vendor/pac/config/pac_common.mk | grep 'PAC_VERSION_MINOR = *' | sed  's/PAC_VERSION_MINOR = //g')
-MAINTENANCE=$(cat $DIR/vendor/pac/config/pac_common.mk | grep 'PAC_VERSION_MAINTENANCE = *' | sed  's/PAC_VERSION_MAINTENANCE = //g')
+MAJOR=$(cat $DIR/vendor/skz/config/skz_common.mk | grep 'SKZ_VERSION_MAJOR = *' | sed  's/SKZ_VERSION_MAJOR = //g')
+MINOR=$(cat $DIR/vendor/skz/config/skz_common.mk | grep 'SKZ_VERSION_MINOR = *' | sed  's/SKZ_VERSION_MINOR = //g')
+MAINTENANCE=$(cat $DIR/vendor/skz/config/skz_common.mk | grep 'SKZ_VERSION_MAINTENANCE = *' | sed  's/SKZ_VERSION_MAINTENANCE = //g')
 VERSION=$MAJOR.$MINOR.$MAINTENANCE
 
 # if we have not extras, reduce parameter index by 1
@@ -47,10 +47,10 @@ clear
 
 echo -e "${cya}Building ${bldgrn}P ${bldppl}A ${bldblu}C ${bldylw}v$VERSION ${txtrst}";
 
-# PAC device dependencies
+# skz device dependencies
 echo -e ""
-echo -e "${bldblu}Looking for PAC product dependencies ${txtrst}${cya}"
-./vendor/pac/tools/getdependencies.py $DEVICE
+echo -e "${bldblu}Looking for skz product dependencies ${txtrst}${cya}"
+./vendor/skz/tools/getdependencies.py $DEVICE
 echo -e "${txtrst}"
 
 # decide what command to execute
@@ -91,16 +91,16 @@ echo -e "${bldblu}Setting up environment ${txtrst}"
 # lunch device
 echo -e ""
 echo -e "${bldblu}Lunching device ${txtrst}"
-lunch "pac_$DEVICE-userdebug";
+lunch "skz_$DEVICE-userdebug";
 
 echo -e ""
 echo -e "${bldblu}Starting compilation ${txtrst}"
 
 # start compilation
-brunch "pac_$DEVICE-userdebug";
+brunch "skz_$DEVICE-userdebug";
 echo -e ""
 
-rm -f out/target/product/*/pac_*-ota-eng.*.zip
+rm -f out/target/product/*/skz_*-ota-eng.*.zip
 
 # finished? get elapsed time
 res2=$(date +%s.%N)
