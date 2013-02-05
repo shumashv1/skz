@@ -11,12 +11,12 @@ Make sure you have your device tree sources, located on
 
 Now you can run the build script:
 
-    ./build-skz.sh -device-
+    ./build.sh -device-
 
 
 You can also use a second parameter for syncing sources before building
 
-    ./build-skz.sh -device- true
+    ./build.sh -device- true
 
 
 There are also a few parameters that you can use together with the previous:
@@ -26,7 +26,7 @@ There are also a few parameters that you can use together with the previous:
 
 The usage is the same
     
-    ./build-skz.sh -device- -parameters- true
+    ./build.sh -device- -parameters- true
 
 
 Parameters will be considered false unless you set them to true
