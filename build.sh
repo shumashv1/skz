@@ -45,7 +45,7 @@ res1=$(date +%s.%N)
 echo -e '\0033\0143'
 clear
 
-echo -e "${cya}Building ${bldgrn}P ${bldppl}A ${bldblu}C ${bldylw}v$VERSION ${txtrst}";
+echo -e "${cya}Building ${bldgrn}SCH${bldppl}IZ${bldblu}OID ${bldylw}v$VERSION ${txtrst}";
 
 # skz device dependencies
 echo -e ""
